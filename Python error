@@ -1,0 +1,22 @@
+I'm trying to perform an analysis of land use/cover change detection using QGIS and MOLUSCE but I get an error message. I'm working with two raster layers (1990 initial vs 2020 final layers) and other three optional layers as a Spatial variables (distance to roads, DEM, and Slope). I successfully completed the "Inputs" and "Evaluating Correlation" tabs processes, but when I get to "Area Changes" tab, and I press the "Update tables"  its ok , but when I press "Create changes map", I always get the same python error message: Which is an unknown error occurs during change map creating.
+Here it goes the error log message:
+2024-11-07T02:43:24     WARNING    An error has occurred while executing Python code:
+             
+             
+             ValueError: 25 is not in list
+             
+             
+             Traceback (most recent call last):
+              File "C:\Users/LENOVO/AppData/Roaming/QGIS/QGIS3\profiles\default/python/plugins\molusce\algorithms\models\area_analysis\manager.py", line 110, in getChangeMap
+              self.makeChangeMap()
+              File "C:\Users/LENOVO/AppData/Roaming/QGIS/QGIS3\profiles\default/python/plugins\molusce\algorithms\models\area_analysis\manager.py", line 135, in makeChangeMap
+              band[i, j] = self.encode(r, c)
+              File "C:\Users/LENOVO/AppData/Roaming/QGIS/QGIS3\profiles\default/python/plugins\molusce\algorithms\models\area_analysis\manager.py", line 100, in encode
+              return self.categories.index(initialClass) * m + self.categories.index(
+             ValueError: 25 is not in list
+                     
+                       
+             Python version: 3.9.5 (tags/v3.9.5:0a7dcbd, May 3 2021, 17:27:52) [MSC v.1928 64 bit (AMD64)]
+                          
+             QGIS version: 3.22.9-Białowieża Białowieża, a8e9e6fa
+              I'm working with QGIS 3.22.9 and MOLUSCE 4.0.0
